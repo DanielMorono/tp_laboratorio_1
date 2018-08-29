@@ -59,9 +59,17 @@ int main()
             printf("Estoy dividiendo %d / %d\n", numeroUno,numeroDos);
             float division;
 
-            division= dividir(numeroUno, numeroDos);
+            if (numeroDos == 0)
+            {
+                printf("No se puede dividir por 0\n");
+            }
+            else
+            {
+                division= dividir(numeroUno, numeroDos);
 
-            printf("La division es: %.2f\n",division);
+                printf("La division es: %.2f\n",division);
+            }
+
             break;
         case 4:
             printf("Ingrese un numero: \n");
