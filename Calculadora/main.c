@@ -4,7 +4,7 @@ int sumar (int , int);
 int restar (int,int);
 float dividir (int,int);
 int multiplicar (int, int);
-int factorial (int, int);
+int factorial (int);
 int main()
 {
     int opcion;
@@ -91,9 +91,10 @@ int main()
             printf("Ingrese un numero: \n");
             scanf("%d", & numeroUno);
 
-            printf("Ingrese otro numero: \n");
-            scanf("%d", & numeroDos);
-            printf("Estoy factorizando %d y %d\n", numeroUno,numeroDos);
+            int elFactorial;
+            elFactorial = factorial(numeroUno);
+
+            printf("El factorial de %d es %d\n", numeroUno,elFactorial);
             break;
         case 6:
             break;
@@ -147,3 +148,14 @@ int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
     return multiplicacion;
 }
 
+int factorial(int numeroUno)    //FUNSION FACTORIAL
+{
+    int factorial=1;
+    int i;
+    int numero = numeroUno;
+
+      for(i=1;i<=numero;i++)
+      factorial=factorial*i;
+
+      return factorial;
+}
