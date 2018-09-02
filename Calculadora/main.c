@@ -3,6 +3,8 @@
 int sumar (int , int);
 int restar (int,int);
 float dividir (int,int);
+int multiplicar (int, int);
+int factorial (int, int);
 int main()
 {
     int opcion;
@@ -78,6 +80,12 @@ int main()
             printf("Ingrese otro numero: \n");
             scanf("%d", & numeroDos);
             printf("Estoy multiplicando %d * %d\n", numeroUno,numeroDos);
+
+            int multiplicacion;
+
+            multiplicacion = multiplicar (numeroUno,numeroDos);
+
+            printf("La Multiplicacion es: %2d\n",multiplicacion);
             break;
         case 5:
             printf("Ingrese un numero: \n");
@@ -103,7 +111,7 @@ int main()
     return 0;
 }
 
-int sumar(int numeroUno, int numeroDos)              //FUNSION SUMA
+int sumar(int numeroUno, int numeroDos)     //FUNSION SUMA
 {
     int suma;
 
@@ -112,7 +120,7 @@ int sumar(int numeroUno, int numeroDos)              //FUNSION SUMA
     return suma;
 }
 
-int restar (int numeroUno, int numeroDos)          //FUNSION RESTA
+int restar (int numeroUno, int numeroDos)   //FUNSION RESTA
 {
     int resta;
 
@@ -121,7 +129,7 @@ int restar (int numeroUno, int numeroDos)          //FUNSION RESTA
     return resta;
 }
 
-float dividir(int numeroUno, int numeroDos)        //FUNSION DIVISION
+float dividir(int numeroUno, int numeroDos)     //FUNSION DIVISION
 {
     float division;
 
@@ -129,3 +137,13 @@ float dividir(int numeroUno, int numeroDos)        //FUNSION DIVISION
 
     return division;
 }
+
+int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
+{
+    int multiplicacion;
+
+    multiplicacion = numeroUno * numeroDos;
+
+    return multiplicacion;
+}
+
