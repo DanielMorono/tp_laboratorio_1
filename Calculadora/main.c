@@ -5,17 +5,26 @@ int restar (int,int);
 float dividir (int,int);
 int multiplicar (int, int);
 int factorial (int);
+int pedirEntero (char[]);
 int main()
 {
     int opcion;
-    int numeroUno;
-    int numeroDos;
+    int numeroUno=0;
+    int numeroDos=0;
+    int suma;
+    int resta;
+    float division;
+    int multiplicacion;
+    int factorialA;
+    int factorialB;
+
     do
     {
         printf("Elija una opcion:\n");
-        printf("1.Ingresar 1er operando\n");
-        printf("2.Ingresar 2do operando\n");
+        printf("1.Ingresar 1er operando: %d\n",numeroUno);
+        printf("2.Ingresar 2do operando: %d\n",numeroDos);
         printf("3.Calcular todas las operaciones\n");
+        printf("   a)Calcular la suma\n   b)Calcular la resta\n   c)Calcular la division\n   d)Calcular la multiplicacion\n   e)Calcular el factorial\n");
         printf("4.Informar resultados\n");
         printf("5.Salir\n");
 
@@ -33,11 +42,38 @@ int main()
         switch (opcion)
         {
         case 1:
-            printf("Ingrese un numero: \n");
-            scanf("%d", & numeroUno);
+            numeroUno = pedirEntero("Ingrese el primer operador: \n");
+            break;
         case 2:
-            printf("Ingrese otro numero: \n");
-            scanf("%d", & numeroDos);
+            numeroDos = pedirEntero("Ingrese el segundo operador: \n");
+            break;
+        case 3:
+            suma = sumar(numeroUno,numeroDos);
+            resta = restar(numeroUno,numeroDos);
+            division = dividir(numeroUno,numeroDos);
+            multiplicacion = multiplicar(numeroUno,numeroDos);
+            factorialA = factorial(numeroUno);
+            break;
+        case 4:
+            printf("El resultado de %d+%d es: %d\n",numeroUno,numeroDos,suma);
+            printf("El resultado de %d-%d es: %d\n",numeroUno,numeroDos,resta);
+            if (numeroDos == 0)
+            {
+                printf("No se puede dividir por 0\n");
+            }
+            else
+            {
+                printf("El resultado de %d/%d es: %.2f\n",numeroUno,numeroDos,division);
+            }
+            printf("El resultado de %d*%d es: %d\n",numeroUno,numeroDos,multiplicacion);
+            printf("El factorial de %d es %d y el factorial de %d es %d",numeroUno,factorialA,numeroDos,factorialB);
+            break;
+        case 5:
+            break;
+        default:
+            printf("Ingrese una opcion correcta.\n");
+            break;
+
         }
         /*switch (opcion)
         {
@@ -123,7 +159,7 @@ int main()
         system("cls");
 
     }
-    while (opcion != 6);
+    while (opcion != 5);
 
     return 0;
 }
@@ -174,4 +210,14 @@ int factorial(int numeroUno)    //FUNSION FACTORIAL
       factorial=factorial*i;
 
       return factorial;
+}
+
+int pedirEntero (char texto[])
+{
+    int numero;
+
+    printf("%s", texto);  //mascara para mostrar cadena de char, streen
+    scanf("%d", &numero);
+
+    return numero;
 }
