@@ -4,7 +4,8 @@ int sumar (int , int);
 int restar (int,int);
 float dividir (int,int);
 int multiplicar (int, int);
-int factorial (int);
+int factorialA (int);
+int factorialB (int);
 int pedirEntero (char[]);
 int main()
 {
@@ -15,14 +16,14 @@ int main()
     int resta;
     float division;
     int multiplicacion;
-    int factorialA;
-    int factorialB;
+    int factorialUno;
+    int factorialDos;
 
     do
     {
         printf("Elija una opcion:\n");
-        printf("1.Ingresar 1er operando: %d\n",numeroUno);
-        printf("2.Ingresar 2do operando: %d\n",numeroDos);
+        printf("1.Ingresar 1er operando: (A=%d)\n",numeroUno);
+        printf("2.Ingresar 2do operando: (B=%d)\n",numeroDos);
         printf("3.Calcular todas las operaciones\n");
         printf("   a)Calcular la suma\n   b)Calcular la resta\n   c)Calcular la division\n   d)Calcular la multiplicacion\n   e)Calcular el factorial\n");
         printf("4.Informar resultados\n");
@@ -48,11 +49,13 @@ int main()
             numeroDos = pedirEntero("Ingrese el segundo operador: \n");
             break;
         case 3:
+            printf("Calculando operaciones...\n");
             suma = sumar(numeroUno,numeroDos);
             resta = restar(numeroUno,numeroDos);
             division = dividir(numeroUno,numeroDos);
             multiplicacion = multiplicar(numeroUno,numeroDos);
-            factorialA = factorial(numeroUno);
+            factorialUno = factorialA(numeroUno);
+            factorialDos = factorialB(numeroDos);
             break;
         case 4:
             printf("El resultado de %d+%d es: %d\n",numeroUno,numeroDos,suma);
@@ -66,7 +69,7 @@ int main()
                 printf("El resultado de %d/%d es: %.2f\n",numeroUno,numeroDos,division);
             }
             printf("El resultado de %d*%d es: %d\n",numeroUno,numeroDos,multiplicacion);
-            printf("El factorial de %d es %d y el factorial de %d es %d",numeroUno,factorialA,numeroDos,factorialB);
+            printf("El factorial de %d es %d y el factorial de %d es %d\n",numeroUno,factorialUno,numeroDos,factorialDos);
             break;
         case 5:
             break;
@@ -200,11 +203,23 @@ int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
     return multiplicacion;
 }
 
-int factorial(int numeroUno)    //FUNSION FACTORIAL
+int factorialA (int numeroUno)    //FUNSION FACTORIAL
 {
     int factorial=1;
     int i;
-    int numero = numeroUno;
+    int numero=numeroUno;
+
+      for(i=1;i<=numero;i++)
+      factorial=factorial*i;
+
+      return factorial;
+}
+
+int factorialB (int numeroDos)    //FUNSION FACTORIAL
+{
+    int factorial=1;
+    int i;
+    int numero=numeroDos;
 
       for(i=1;i<=numero;i++)
       factorial=factorial*i;
