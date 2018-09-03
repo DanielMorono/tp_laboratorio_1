@@ -1,9 +1,12 @@
 # depslib dependency file v1.0
-1535999205 source:c:\users\dani\desktop\tp_laboratorio_1\calculadora\main.c
+1536013759 source:c:\users\dani\desktop\tp_laboratorio_1\calculadora\main.c
 	<stdio.h>
 	<stdlib.h>
+	"operaciones.h"
 
 1535987039 source:c:\users\alumno\desktop\tp_laboratorio_1\calculadora\main.c
 	<stdio.h>
 	<stdlib.h>
+
+1536013665 c:\users\dani\desktop\tp_laboratorio_1\calculadora\operaciones.h
 
