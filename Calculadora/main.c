@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include "operaciones.h"
 
-/*int sumar (int , int);
-int restar (int,int);
-float dividir (int,int);
-int multiplicar (int, int);
-int factorialA (int);
-int factorialB (int);
-int pedirEntero (char[]);*/
+int pedirEntero (char[]);
 int main()
 {
     int opcion;
@@ -20,6 +14,9 @@ int main()
     int multiplicacion;
     long int factorialUno;
     long int factorialDos;
+    int respetarOrden=0;
+    int respetarOrdenDos=0;
+    int respetarOrdenTres=0;
 
     do
     {
@@ -27,7 +24,7 @@ int main()
         printf("1.Ingresar 1er operando: (A=%d)\n",numeroUno);
         printf("2.Ingresar 2do operando: (B=%d)\n",numeroDos);
         printf("3.Calcular todas las operaciones\n");
-        printf("   a)Calcular la suma\n   b)Calcular la resta\n   c)Calcular la division\n   d)Calcular la multiplicacion\n   e)Calcular el factorial\n");
+        printf("   a)Suma\n   b)Resta\n   c)Division\n   d)Multiplicacion\n   e)Factorial\n");
         printf("4.Informar resultados\n");
         printf("5.Salir\n");
 
@@ -37,11 +34,26 @@ int main()
         {
         case 1:
             numeroUno = pedirEntero("Ingrese el primer operador: \n");
+            respetarOrden=1;
             break;
         case 2:
+            if (respetarOrden == 0)
+            {
+                printf("Debe ingresar el primer operador antes de realizar esta funcion\n");
+            }
+            else
+            {
             numeroDos = pedirEntero("Ingrese el segundo operador: \n");
+            respetarOrdenDos = 1;
+            }
             break;
         case 3:
+            if (respetarOrdenDos == 0)
+            {
+                printf("Debe ingresar los dos operadores antes de realizar esta funcion\n");
+            }
+            else
+            {
             printf("Calculando operaciones...\n");
             suma = sumar(numeroUno,numeroDos);
             resta = restar(numeroUno,numeroDos);
@@ -49,8 +61,16 @@ int main()
             multiplicacion = multiplicar(numeroUno,numeroDos);
             factorialUno = factorialA(numeroUno);
             factorialDos = factorialB(numeroDos);
+            respetarOrdenTres = 1;
+            }
             break;
         case 4:
+            if (respetarOrdenTres == 0)
+            {
+                printf("Debe ingresar los dos operadores y calcular las operaciones antes de realizar esta funcion\n");
+            }
+            else
+            {
             printf("El resultado de %d+%d es: %d\n",numeroUno,numeroDos,suma);
             printf("El resultado de %d-%d es: %d\n",numeroUno,numeroDos,resta);
 
@@ -64,7 +84,30 @@ int main()
             }
 
             printf("El resultado de %d*%d es: %d\n",numeroUno,numeroDos,multiplicacion);
-            printf("El factorial de %d es %d y el factorial de %d es %d\n",numeroUno,factorialUno,numeroDos,factorialDos);
+
+
+
+            if (numeroUno < 0)
+            {
+                printf("%d no tiene factorial porque es negativo\n",numeroUno);
+            }
+            else
+            {
+                printf("El factorial de %d es %d\n", numeroUno,factorialUno);
+            }
+
+            if (numeroDos < 0)
+            {
+                printf("%d no tiene factorial porque es negativo\n",numeroDos);
+            }
+            else
+            {
+                printf("El factorial de %d es %d\n", numeroDos,factorialDos);
+            }
+
+
+            respetarOrdenTres = 1;
+            }
             break;
         case 5:
             break;
@@ -82,66 +125,6 @@ int main()
 
     return 0;
 }
-/*
-int sumar(int numeroUno, int numeroDos)     //FUNSION SUMA
-{
-    int suma;
-
-    suma = numeroUno + numeroDos;
-
-    return suma;
-}
-
-int restar (int numeroUno, int numeroDos)   //FUNSION RESTA
-{
-    int resta;
-
-    resta = numeroUno - numeroDos;
-
-    return resta;
-}
-
-float dividir(int numeroUno, int numeroDos)     //FUNSION DIVISION
-{
-    float division;
-
-    division = (float)numeroUno / (float)numeroDos;
-
-    return division;
-}
-
-int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
-{
-    int multiplicacion;
-
-    multiplicacion = numeroUno * numeroDos;
-
-    return multiplicacion;
-}
-
-int factorialA (int numeroUno)    //FUNSION FACTORIAL
-{
-    int factorial=1;
-    int i;
-    int numero=numeroUno;
-
-      for(i=1;i<=numero;i++)
-      factorial=factorial*i;
-
-      return factorial;
-}
-
-int factorialB (int numeroDos)    //FUNSION FACTORIAL
-{
-    int factorial=1;
-    int i;
-    int numero=numeroDos;
-
-      for(i=1;i<=numero;i++)
-      factorial=factorial*i;
-
-      return factorial;
-}*/
 
 int pedirEntero (char texto[])
 {

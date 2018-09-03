@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "operaciones.h"
 
-int sumar(int numeroUno, int numeroDos)     //FUNSION SUMA
+int sumar(int numeroUno, int numeroDos)
 {
     int suma;
 
@@ -11,7 +11,7 @@ int sumar(int numeroUno, int numeroDos)     //FUNSION SUMA
     return suma;
 }
 
-int restar (int numeroUno, int numeroDos)   //FUNSION RESTA
+int restar (int numeroUno, int numeroDos)
 {
     int resta;
 
@@ -20,7 +20,7 @@ int restar (int numeroUno, int numeroDos)   //FUNSION RESTA
     return resta;
 }
 
-float dividir(int numeroUno, int numeroDos)     //FUNSION DIVISION
+float dividir(int numeroUno, int numeroDos)
 {
     float division;
 
@@ -29,7 +29,7 @@ float dividir(int numeroUno, int numeroDos)     //FUNSION DIVISION
     return division;
 }
 
-int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
+int multiplicar (int numeroUno, int numeroDos)
 {
     int multiplicacion;
 
@@ -38,7 +38,7 @@ int multiplicar (int numeroUno, int numeroDos)  //FUNSION MULTIPLICAR
     return multiplicacion;
 }
 
-int factorialA (int numeroUno)    //FUNSION FACTORIAL
+int factorialA (int numeroUno)
 {
     int factorial=1;
     int i;
@@ -50,7 +50,7 @@ int factorialA (int numeroUno)    //FUNSION FACTORIAL
       return factorial;
 }
 
-int factorialB (int numeroDos)    //FUNSION FACTORIAL
+int factorialB (int numeroDos)
 {
     int factorial=1;
     int i;
