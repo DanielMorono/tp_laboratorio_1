@@ -130,7 +130,7 @@ int pedirEntero (char texto[])
 {
     int numero;
 
-    printf("%s", texto);  //mascara para mostrar cadena de char, streen
+    printf("%s", texto);
     scanf("%d", &numero);
 
     return numero;
