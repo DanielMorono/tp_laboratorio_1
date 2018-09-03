@@ -13,6 +13,14 @@ int main()
     do
     {
         printf("Elija una opcion:\n");
+        printf("1.Ingresar 1er operando\n");
+        printf("2.Ingresar 2do operando\n");
+        printf("3.Calcular todas las operaciones\n");
+        printf("4.Informar resultados\n");
+        printf("5.Salir\n");
+
+        scanf("%d", & opcion);
+        /*printf("Elija una opcion:\n");
         printf("1.Sumar\n");
         printf("2.Restar\n");
         printf("3.Dividir\n");
@@ -20,10 +28,18 @@ int main()
         printf("5.Factorial\n");
         printf("6.Salir\n");
 
-        scanf("%d", & opcion);
-
+        scanf("%d", & opcion);*/
 
         switch (opcion)
+        {
+        case 1:
+            printf("Ingrese un numero: \n");
+            scanf("%d", & numeroUno);
+        case 2:
+            printf("Ingrese otro numero: \n");
+            scanf("%d", & numeroDos);
+        }
+        /*switch (opcion)
         {
         case 1:
             printf("Ingrese un numero: \n");
@@ -101,7 +117,7 @@ int main()
         default:
             printf("Ingrese una opcion correcta.\n");
             break;
-        }
+        }*/
 
         system("pause");
         system("cls");
