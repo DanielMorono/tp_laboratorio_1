@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "operaciones.h"
+#include "biblioteca.h"
 
-int pedirEntero (char[]);
 int main()
 {
     int opcion;
@@ -126,12 +125,4 @@ int main()
     return 0;
 }
 
-int pedirEntero (char texto[])
-{
-    int numero;
 
-    printf("%s", texto);
-    scanf("%d", &numero);
-
-    return numero;
-}

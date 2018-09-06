@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "operaciones.h"
+#include "biblioteca.h"
 
 int sumar(int numeroUno, int numeroDos)
 {
@@ -61,3 +61,14 @@ int factorialB (int numeroDos)
 
       return factorial;
 }
+
+int pedirEntero (char texto[])
+{
+    float numero;
+
+    printf("%s", texto);
+    scanf("%f", &numero);
+
+    return numero;
+}
+

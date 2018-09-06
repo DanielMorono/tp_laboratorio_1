@@ -1,3 +1,4 @@
+
 /** \brief Suma dos numeros enteros
  *
  * \param int primer operador de la suma
@@ -59,3 +60,14 @@ int factorialA (int);
  *
  */
 int factorialB (int);
+
+
+
+/** \brief Pide un numero entero
+ *
+ * \param char [] Texto que le pida al usuario que ingrese un numero
+ * \return int numero entero que ingresa el usuario
+ *
+ */
+
+int pedirEntero (char[]);
